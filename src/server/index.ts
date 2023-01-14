@@ -11,8 +11,9 @@ import { auth } from "./auth";
 const app = express();
 
 const connectionString =
-  "postgresql://postgres:1234@localhost:5432/mydb?schema=schema$prod";
-console.log(process.env.DATABASE_UR);
+  const connectionString = process.env.DATABASE_URL ||
+  "postgresql://postgres:1234@localhost:5432/todo-app?schema=schema$prod";
+
 app.use(
   remultExpress({
     dataProvider: () =>
